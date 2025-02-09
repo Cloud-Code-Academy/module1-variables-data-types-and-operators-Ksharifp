@@ -8,6 +8,6 @@ Changes made to my name
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Kharaam';
+string tempvar = 'Kharaaaam';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
