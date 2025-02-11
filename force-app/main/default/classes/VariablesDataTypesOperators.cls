@@ -277,9 +277,9 @@ public with sharing class VariablesDataTypesOperators {
     public static Double convertFahrenheitToCelsius(Double fahrenheit) {
         final Double subtractFactor = 32.0;
         final Double multiplyFactorultiplyFactor = 5.0;
-        final Double civideFactor = 9.0;
-    
-        return null; // Replace null with the variable you used to store the result
+        final Double divideFactor = 9.0;
+        final Double celsius = (fahrenheit - subtractFactor) * (multiplyFactorultiplyFactor / divideFactor);
+        return celsius; // Replace null with the variable you used to store the result
     }
 
     
@@ -295,11 +295,11 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer performDivisionAndCast(Double a, Double b) {
         // Perform the division and cast (round down) off the result.
-        Double divisionResult = null;
+        Double divisionResult = a/b;
 
         // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = null;
-        return null; // Replace null with the variable you used to store the result
+        Integer roundedResult = divisionResult.round(system.RoundingMode.DOWN);
+        return roundedResult; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -313,7 +313,8 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
         // Calculate the weekly paycheck using the formula: rate multiplied by hours
-        return null; // Replace null with the variable you used to store the result
+        Decimal weekly = hourlyRate * numberOfHours;
+        return weekly; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -327,7 +328,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return null; // Replace null with the variable you used to store the result
+        Decimal monthly = weekly * 4;
+        return monthly; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -341,6 +343,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The total cost after applying the sales tax.
      */
     public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate) {
-        return null; // Replace null with the variable you used to store the result
+        Decimal totalcost = (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+        return totalcost; // Replace null with the variable you used to store the result
     }
 }
