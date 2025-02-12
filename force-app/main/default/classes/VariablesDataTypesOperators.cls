@@ -31,13 +31,14 @@ public with sharing class VariablesDataTypesOperators {
      * @param b The second number.
      * @return The sum of the two numbers, or null if either number is null.
      */
-    public static Integer addition(Integer a, Integer b) {  
+    public static Integer addition(Integer a, Integer b) { 
+        Integer c; 
         If ( a != null && b != null) {
-            Integer c = a + b;
-        } else {
+            c = a + b;
+        } else if (a == null || b == null) {
             c = null;
-        }
-        return c; // Replace null with the variable you used to store the result
+        } 
+        return c;// Replace null with the variable you used to store the result
     }
 
     /**
@@ -76,10 +77,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
     public static Double division(Double a, Double b) {
-        If ( b != 0 ) { 
-            Double f = a / b;
+        Decimal f;
+        if ( b == 0 ) { 
+            f = 0;
         } else {
-            f = null;
+            f = (a / b);
         }
         return f; // Replace null with the variable you used to store the result
     }
@@ -96,8 +98,9 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Boolean isEven(Integer num) {
         Integer remainder = math.mod(num, 2);
-        If ( remainder = 0 ) {
-            Boolean isEvennumber = True;
+        Boolean isEvennumber;
+        if ( remainder == 0 ) {
+            isEvennumber = True;
         } else {
             isEvennumber = false;
         }
@@ -112,8 +115,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
+        Boolean isPositivenumber;
         If ( num > 0 ) {
-            Boolean isPositivenumber = True;
+            isPositivenumber = True;
         } else {
             isPositivenumber = false;
         }
@@ -159,8 +163,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        If ( Date < today() ) {
-            Boolean isPastDate = True;
+        Boolean isPastDate;
+        If ( dt < Date.today() ) {
+            isPastDate = True;
         } else {
             isPastDate = False;
         }
@@ -177,10 +182,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        If (dt >= today()) {
-            Boolean todOrfut = False;
-        } else {
+        Boolean todOrfut;
+        If (dt >= Date.today()) {
             todOrfut = true;
+        } else {
+            todOrfut = false;
         }
         return todOrfut; // Replace null with the variable you used to store the result
     }
@@ -194,8 +200,9 @@ public with sharing class VariablesDataTypesOperators {
      * @param minutes The number of minutes.
      * @return The number of milliseconds equivalent to the given number of minutes.
      */
-    Integer mILLISECONDSpERmINUTE = 60000; // Make this value a constant
+    
     public static Integer convertMinutesToMilliseconds(Integer minutes) {
+        final Integer mILLISECONDSpERmINUTE = 60000; // Make this value a constant
         Integer milliseconds = minutes * mILLISECONDSpERmINUTE;
         return milliseconds; // Replace null with the variable you used to store the result
     }    
@@ -262,7 +269,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = ((a * b) - c) / (Double) (d + e);
+        Double result = ((a * b) - c) / (Double) d + e;
 
         return result; // Replace null with the variable you used to store the result
     }
@@ -298,7 +305,7 @@ public with sharing class VariablesDataTypesOperators {
         Double divisionResult = a/b;
 
         // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = divisionResult.round(system.RoundingMode.DOWN);
+        Integer roundedResult = Math.floor(divisionResult).intValue();
         return roundedResult; // Replace null with the variable you used to store the result
     }
 
@@ -313,8 +320,8 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
         // Calculate the weekly paycheck using the formula: rate multiplied by hours
-        Decimal weekly = hourlyRate * numberOfHours;
-        return weekly; // Replace null with the variable you used to store the result
+        Decimal weekly1 = hourlyRate * numberOfHours;
+        return weekly1; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -328,7 +335,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        Decimal monthly = weekly * 4;
+        Decimal weekly2 = hourlyRate * numberOfHours;
+        Decimal monthly = weekly2 * 4;
         return monthly; // Replace null with the variable you used to store the result
     }
 
