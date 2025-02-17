@@ -159,7 +159,7 @@ public with sharing class VariablesDataTypesOperators {
         /*String str3 = str1 + str2;
         return str3; // Replace null with the variable you used to store the result
         */
-        return str 1 + str 2;
+        return str1 + str2;
     }
 
 	/**
@@ -387,7 +387,7 @@ public with sharing class VariablesDataTypesOperators {
         return monthly; // Replace null with the variable you used to store the result
         */
         Integer numberOfWeeksInMonth = 4;
-        Decimal monthly = calculateWeeklyPaycheck(hourlyRate, numberOfHours) * numberOfWeeksInMonth;
+        return calculateWeeklyPaycheck(hourlyRate, numberOfHours) * numberOfWeeksInMonth;
 
     }
 
